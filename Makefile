@@ -1,7 +1,7 @@
 test: transform lower strip palindrome
 
 transform:
-	gcc transform/transform.c -o transform.out
+	gcc -lm transform/transform.c -o transform.out
 	./transform.out
 
 lower:
