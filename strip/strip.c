@@ -10,7 +10,16 @@ no spaces in between.  For example, 'a !b.   c' becomes 'abc'.
 #include <string.h> /* strcpy */
 #include <assert.h> /* assert */
 
-void strip(char *s) {}
+void strip(char *s) {
+    for(int i=0;s[i]!='\0';i++){
+        if(!isalnum(s[i])){
+            for(int c=i;s[c]!='\0';c++){
+                s[c]=s[c+1];
+            }
+          i--;
+        }
+    }
+}
 
 int main() {
     char s[80];
