@@ -10,7 +10,18 @@ reverse.  I.e. racecar is a palindrome, but Racecar is not.
 #include <string.h> /* strlen */
 #include <assert.h> /* assert */
 
-int palindrome(char *s) {}
+int palindrome(char *s) {
+    int length=0;
+    for(int i=0;s[i]!='\0';i++){
+        length++;
+    }
+    for(int c=0;c<length/2;c++){
+        if(s[c]!=s[length-c-1]){
+            return 0;
+        }
+    }
+    return 1;
+}
 
 int main() {
     assert(palindrome("abba") == 1);
