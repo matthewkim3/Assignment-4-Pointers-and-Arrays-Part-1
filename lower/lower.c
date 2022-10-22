@@ -10,7 +10,12 @@ lowercase.
 #include <string.h> /* tolower */
 #include <assert.h> /* assert */
 
-void lower(char *s) {}
+void lower(char *s) {
+    for(int i=0;s[i]!='/0';i++){
+        s[i]=tolower(s[i]);
+    }
+    
+}
 
 int main() {
     char s[80];
